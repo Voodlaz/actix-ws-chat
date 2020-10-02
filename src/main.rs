@@ -20,7 +20,10 @@ impl StreamHandler<Result<ws::Message, ws::ProtocolError>> for Ws {
     ) {
         match msg {
             Ok(ws::Message::Ping(msg)) => ctx.pong(&msg),
-            Ok(ws::Message::Text(text)) => ctx.text(text),
+            Ok(ws::Message::Text(text)) => {
+                ctx.text(text);
+                println(text);
+            },
             _ => (),
         }
     }

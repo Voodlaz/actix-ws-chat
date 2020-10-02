@@ -6,4 +6,5 @@ socket.onmessage = (event) => {
   // append received message from the server to the DOM element
   const chat = document.querySelector("#chat");
   chat.innerHTML += event.data;
+  alert(event.data)
 }
